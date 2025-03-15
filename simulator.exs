@@ -28,6 +28,16 @@ defmodule Scoring do
         1 => %{right: 0, left: 0},
         2 => %{right: 0, left: 0}
       }
+    },
+    server_receivers: %{
+      {{:a, 1}, {:b, 1}} => 0,
+      {{:a, 1}, {:b, 2}} => 0,
+      {{:a, 2}, {:b, 1}} => 0,
+      {{:a, 2}, {:b, 2}} => 0,
+      {{:b, 1}, {:a, 1}} => 0,
+      {{:b, 1}, {:a, 2}} => 0,
+      {{:b, 2}, {:a, 1}} => 0,
+      {{:b, 2}, {:a, 2}} => 0
     }
   }
 
@@ -101,15 +111,6 @@ defmodule Scoring do
       |> put_in([:serving, :side], :right)
     end
 
-    # defp maybe_switch_positions(
-    #        %{score: %{^team => team_score}, positions: %{^team => %{right: 1, left: 2}}} = state,
-    #        team
-    #      )
-    #      when is_odd(team_score) do
-    #   state
-    #   |> switch_positions(team)
-    # end
-
     defp maybe_switch_positions(%{score: score, positions: positions} = state, team) do
       if (Integer.is_odd(score[team]) && positions[team][:right] == 1) ||
            (Integer.is_even(score[team]) && positions[team][:right] == 2) do
@@ -121,24 +122,61 @@ defmodule Scoring do
     end
   end
 
+  defmodule RallyNoSwitch do
+    import Helpers
+    require Integer
+
+    def server_won(state, team) do
+      state
+      |> increment_score(team)
+      |> switch_positions(team)
+      |> switch_serving_side()
+    end
+
+    def receiver_won(state, team) do
+      state
+      |> increment_score(team)
+      |> award_service(team)
+      |> set_serving_side(team)
+    end
+
+    defp set_serving_side(%{score: score} = state, team) do
+      side =
+        if Integer.is_odd(score[team]) do
+          :left
+        else
+          :right
+        end
+
+      state
+      |> put_in([:serving, :side], side)
+    end
+  end
+
   def traditional(count), do: run(Traditional, count)
 
   def rally(count), do: run(Rally, count)
 
+  def rally_no_switch(count), do: run(RallyNoSwitch, count)
+
   defp run(module, count) do
-    Enum.reduce(Range.new(1, count), @state, fn _i, state ->
-      point_winner = Enum.random([:a, :b])
+    state =
+      Enum.reduce(Range.new(1, count), @state, fn _i, state ->
+        point_winner = Enum.random([:a, :b])
 
-      state =
+        state =
+          state
+          |> update_serves()
+
+        # |> IO.inspect()
+
+        # IO.puts("point winner: #{point_winner}")
+
         state
-        |> update_serves()
-        |> IO.inspect()
+        |> point_won(point_winner, module)
+      end)
 
-      IO.puts("point winner: #{point_winner}")
-
-      state
-      |> point_won(point_winner, module)
-    end)
+    IO.inspect(state)
   end
 
   defp update_serves(state) do
@@ -146,7 +184,15 @@ defmodule Scoring do
     side = state.serving.side
     player = state.positions[team][side]
 
-    update_in(state, [:serves, team, player, side], &(&1 + 1))
+    receiving_team = if team == :a, do: :b, else: :a
+    receiving_position = if side == :right, do: :left, else: :right
+    receiving_player = state.positions[receiving_team][receiving_position]
+
+    server_receiver = {{team, player}, {receiving_team, receiving_player}}
+
+    state
+    |> update_in([:serves, team, player, side], &(&1 + 1))
+    |> update_in([:server_receivers, server_receiver], &(&1 + 1))
   end
 
   defp point_won(%{serving: %{team: :a}} = state, team = :a, module) do
@@ -172,4 +218,5 @@ count = String.to_integer(count)
 case type do
   "traditional" -> Scoring.traditional(count)
   "rally" -> Scoring.rally(count)
+  "rally_no_switch" -> Scoring.rally_no_switch(count)
 end

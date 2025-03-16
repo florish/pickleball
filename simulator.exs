@@ -1,3 +1,13 @@
+# Usage
+#
+# - Download this script
+# - [Install Elixir](https://elixir-lang.org/install.html) on your system
+# - Open a command line interface program (e.g. Terminal on macOS)
+# - Navigate to the folder in which this script is located
+# - Run `elixir simulator.exs` do display further usage instructions
+#
+# Have fun!
+
 defmodule Scoring do
   @state %{
     positions: %{
@@ -168,9 +178,8 @@ defmodule Scoring do
           state
           |> update_serves()
 
-        # |> IO.inspect()
-
-        # IO.puts("point winner: #{point_winner}")
+        # IO.inspect(state)
+        # IO.inspect("point winner: #{point_winner}")
 
         state
         |> point_won(point_winner, module)
@@ -212,7 +221,22 @@ defmodule Scoring do
   end
 end
 
-[type, count] = System.argv()
+args = System.argv()
+
+if length(args) < 2 do
+  IO.puts("""
+  Usage:
+    simulator.exs TYPE COUNT
+
+  With:
+    TYPE    Scoring type: "traditional", "rally" or "rally_no_switch"
+    COUNT   The number of serves the simulator should run
+  """)
+
+  System.halt(0)
+end
+
+[type | [count | _]] = args
 count = String.to_integer(count)
 
 case type do

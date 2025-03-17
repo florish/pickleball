@@ -8,6 +8,7 @@ During our weekly play, we tried things out and reread the rules. Our conclusion
 
 A couple of days later, I realized that it should be possible to prove this point by running a pickleball scoring simulator. The winner of every point is decided by a coin-flip-like mechanism, leading to a 50/50 chance for both teams to win every point. Within a couple of seconds, the simulator can play a million points, while keeping track of the number of left side and right side serves for all four players.
 
+And so here we are :)
 
 ## Article overview
 

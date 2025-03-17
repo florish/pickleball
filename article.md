@@ -20,7 +20,7 @@ To take these problems away, an alternative rally scoring approach is offered, f
 
 ## Simulator setup
 
-In the simulator, team `a` plays against team `b`. Both teams have players `1` and `2`. Player `1` of each team starts the game on the right side of the court, given playes are facing towards the net.
+In the simulator, team `a` plays against team `b`. Both teams have players `1` and `2`. Player `1` of each team starts the game on the right side of the court (given all players are facing towards the net).
 
 This gives us the following starting position:
 

@@ -10,7 +10,7 @@ And so here we are :)
 
 ## Article overview
 
-First, the simulator setup is explained. The simulator is then used to show the differences between two types of doubles scoring:
+First, the simulator setup is explained. This setup is then used to show the differences between two types of doubles scoring:
 
 1. **Traditional scoring**: the official (non-provisional) 2025 scoring rules
 2. **Rally scoring**: the provisional 2025 rally scoring rules

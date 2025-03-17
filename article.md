@@ -2,7 +2,7 @@
 
 One of the other players in our pickleball group recently mentioned the new rally scoring rules. To be precise: he meant the provisional rally scoring rules for doubles as [introduced](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook-Change-Document.pdf) in the [2025 USA Pickleball Rulebook](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook.pdf).
 
-During our weekly play, we tried things out and reread the rules. Our conclusion: there is something odd about the "forced" right side serving after a side out. This causes every round of serving to start on the right side, which leads to more right side serves than left side serves.
+During our weekly play, we tried things out and reread the rules a couple of times. Our conclusion: there is something odd about the "forced" right side serving after a side out. This causes every round of serving to start on the right side, which leads to more right side serves than left side serves.
 
 A couple of days later, I realized that it should be possible to prove this point by running a pickleball scoring simulator. The winner of every point is decided by a coin-flip-like mechanism, leading to a 50/50 chance for both teams to win every point. Within a couple of seconds, the simulator can play a million points, while keeping track of the number of left side and right side serves for all four players.
 

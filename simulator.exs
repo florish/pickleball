@@ -223,7 +223,7 @@ end
 
 args = System.argv()
 
-if length(args) < 2 do
+if length(args) != 2 do
   IO.puts("""
   Usage:
     simulator.exs TYPE COUNT
@@ -236,7 +236,7 @@ if length(args) < 2 do
   System.halt(0)
 end
 
-[type | [count | _]] = args
+[type, count] = args
 count = String.to_integer(count)
 
 case type do

@@ -129,7 +129,7 @@ This is partly compensated by having the possibility to hit the ball further ins
 
 <hr/>
 
-At the time of writing, I do not have any data on _how_ this affects play. All I can say at this point is that there is a clear difference in serving angles depending on playing hand, and that I am assuming this will affect play.
+At the time of writing, I do not have any data on _how_ this affects play. All I can say at this point is that there is a clear difference in serving angles depending on playing hand. I am assuming this will affect play.
 
 Ensuring an equal number of right and left side services would compensate for this, as the serving angles are then also swapped. The official rules (both traditional scoring and rally scoring) should therefore aim to minimize the difference between the number of right and left side service turns.
 

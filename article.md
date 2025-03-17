@@ -120,10 +120,14 @@ For a left-handed player, serving from the right side of the court makes if hard
 
 This is partly compensated by having the possibility to hit the ball further inside the court on the other side of the service area, but not completely. This is best made clear by a visual representation:
 
+<hr/>
+
 <figure>
-  <img src="./serving-angles.svg"/>
+  <img src="./serving-angles.svg" width="480" height="480" />
   <figcaption>Serving angles from right side of the court. Red: right hand. Green: left hand. A hit point two feet outside of the body is assumed.</figcaption>
 </figure>
+
+<hr/>
 
 At the time of writing, I do not have any data on _how_ this affects play. All I can say at this point is that there is a clear difference in serving angles depending on playing hand, and that I am assuming this will affect play.
 

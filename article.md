@@ -1,8 +1,6 @@
 # Why The 2025 Provisional Rally Scoring Pickleball Rules Are Biased Towards Right Side Serving (And Why This Is Probably Unfair)
 
-One of the other players in our pickleball group recently mentioned the new rally scoring rules.
-
-To be precise: the provisional rally scoring rules for doubles as [introduced](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook-Change-Document.pdf) in the [2025 USA Pickleball Rulebook](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook.pdf).
+One of the other players in our pickleball group recently mentioned the new rally scoring rules. To be precise: he meant the provisional rally scoring rules for doubles as [introduced](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook-Change-Document.pdf) in the [2025 USA Pickleball Rulebook](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook.pdf).
 
 During our weekly play, we tried things out and reread the rules. Our conclusion: there is something odd about the "forced" right side serving after a side out. This causes every round of serving to start on the right side, which leads to more right side serves than left side serves.
 

@@ -101,7 +101,7 @@ Now there are 2 right side services for 1 left side service.
 
 This is quite different to traditional scoring.
 
-Again, this can be explained. As in traditional scoring, every service turn is started on the right side of the court. The odd/even scoring position alignment after a side out guarantees that both players serve in turn. This is also reflected in the simulator results. However, this also causes a major right side serving bias, as there is no longer a second server that guarantees at least one left side service on each team's service turn.
+Again, this can be explained. As in traditional scoring, every service turn is started on the right side of the court. The odd/even scoring position alignment after a side out guarantees that both players serve in turn. This is reflected in the simulator results. However, this also causes a major right side serving bias, as there is no longer a second server that guarantees at least one left side service on each team's service turn.
 
 In an extreme situation where all points are won by the receiving team, no player would ever serve from the left side of the court. While this will almost never be the case, it is possible. As an example, it clearly illustrates the point of right side serving bias caused by the 2025 provisional rally scoring rules.
 

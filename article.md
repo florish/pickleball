@@ -1,12 +1,12 @@
 # Why The 2025 Provisional Rally Scoring Pickleball Rules Are Biased Towards Right Side Serving (And Why This Is Probably Unfair)
 
-One of the other players in our pickleball group recently mentioned the new rally scoring rules. To be precise: he meant the provisional rally scoring rules for doubles as [introduced](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook-Change-Document.pdf) in the [2025 USA Pickleball Rulebook](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook.pdf).
+One of the players in our pickleball group recently mentioned the new rally scoring rules. He was referring to the provisional rally scoring rules for doubles as [introduced](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook-Change-Document.pdf) in the [2025 USA Pickleball Rulebook](https://usapickleball.org/docs/2025-USA-Pickleball-Rulebook.pdf).
 
-During our weekly play, we tried things out and reread the rules a couple of times. Our conclusion: there is something odd about the "forced" right side serving after a side out. This causes every round of serving to start on the right side, which leads to more right side serves than left side serves.
+During our weekly play, we tried things out and reread the rules a couple of times. Our conclusion: there is something odd about the "forced" right side serving after a side out. This causes every round of serving to start on the right side, which leads to significantly more right side serves than left side serves.
 
 A couple of days later, I realized that it should be possible to prove this point by running a pickleball scoring simulator. The winner of every point is decided by a coin-flip-like mechanism, leading to a 50/50 chance for both teams to win every point. Within a couple of seconds, the simulator can play a million points, while keeping track of the number of left side and right side serves for all four players.
 
-Long story short: here we are :)
+And some hours coding and writing later, here we are with an in-depth article on pickleball scoring rules. Let's go!
 
 ## Article overview
 
@@ -80,7 +80,7 @@ After playing one million serves, the simulator will show serve counts roughly e
 
 Note that the exact numbers vary between simulations. This is due to the deliberately introduced randomness for individual rally wins.
 
-What can be seen is that for every 5 right side services, there are 4 left side services.
+What can be seen is that for every five right side services, there are four left side services.
 
 While it could be fun to prove this mathematically, this is out of scope of this article.
 
@@ -97,13 +97,13 @@ After simulating one million serves, a typical result will look like this:
 |right|166736|166573|166543|166285|
 |left | 83522| 83359| 83620| 83362|
 
-Now there are 2 right side services for 1 left side service.
+Now there are two right side services for every left side service.
 
 This is quite different to traditional scoring.
 
 Again, this can be explained. As in traditional scoring, every service turn is started on the right side of the court. The odd/even scoring position alignment after a side out guarantees that both players serve in turn. This is reflected in the simulator results. However, this also causes a major right side serving bias, as there is no longer a second server that guarantees at least one left side service on each team's service turn.
 
-In an extreme situation where all points are won by the receiving team, no player would ever serve from the left side of the court. While this will almost never be the case, it is possible. As an example, it clearly illustrates the point of right side serving bias caused by the 2025 provisional rally scoring rules.
+In an extreme situation where all points are won by the receiving team, no player would ever serve from the left side of the court. While this will almost never be the case, this scenario clearly illustrates the right side serving bias caused by the 2025 provisional rally scoring rules.
 
 ## Why is right side serving bias a problem?
 
@@ -130,15 +130,15 @@ This is partly compensated by having the possibility to hit the ball further ins
 
 At the time of writing, I do not have any data on _how_ this affects play. All I can say at this point is that there is a clear difference in serving angles depending on playing hand. I am assuming this will affect play.
 
-Ensuring an equal number of right and left side services would compensate for this, as the serving angles are then also swapped. The official rules (both traditional scoring and rally scoring) should therefore aim to minimize the difference between the number of right and left side service turns.
+Ensuring an equal number of right and left side services would compensate for this, as the serving angles are then mirrored and swapped. The official rules (both traditional scoring and rally scoring) should therefore aim to minimize the difference between the number of right and left side service turns.
 
 ### Proposal: rally scoring without right side bias
 
-Luckily, we can experiment with this, using the same simulator as before, but with different scoring rules.
+So given there is a problem, how can we fix it? By using our simulator!
 
-What should be changed to ensure an equal number of right and left side serves?
+All we have to do is implement a slightly different set of rally scoring rules. Buy what should be changed to ensure an equal number of right and left side serves?
 
-The proposal in this article is to use the serving side rules from singles scoring. After every side out:
+The proposal in this article is to use the serving side rules from singles scoring. The following rules apply after every side out:
 
 - If the serving team's score is even, start serving from the right side
 - If the serving team's score is odd, start serving from the left side
@@ -160,14 +160,16 @@ Problem solved! Or not?
 
 So why is this format not used in the 2025 provisional rules?
 
-Reading a bit of [discussion on Facebook](https://www.facebook.com/groups/1340630926008388/posts/27974748598836592/), it seems that USA Pickleball has also been taking referees into account. In traditional scoring, a referee can tell from a team's score (odd or even) which player should be serving and receiving on which side of the court. This is why in tournaments, the starting server and receiver often need to wear a wristband, as they should be on the right side when scores are even.
+Reading a bit of [discussion on Facebook](https://www.facebook.com/groups/1340630926008388/posts/27974748598836592/), it seems that USA Pickleball has also been taking referees into account. In traditional scoring, a referee can tell from a team's odd or even score which player should be serving and receiving on which side of the court. This is why in tournaments, the starting server and receiver often need to wear a wristband, as they should be on the right side when scores are even.
 
-The 2025 provisional rally scoring rules make sure this is still possible, at the cost of a more severe right side serving bias.
+The 2025 provisional rally scoring rules make sure this is still possible. This comes at the cost of a more severe right side serving bias.
 
-The proposed rally scoring alternative takes away right side serving bias, at the cost of no longer being able to instantly spot from the scoreboard which player should serve or receive on which side of the court.
+The proposed rally scoring alternative takes away right side serving bias. Now at the cost of no longer being able to instantly spot from the scoreboard which player should serve or receive on which side of the court.
 
 This leaves the question: what is more important?
 
 Let me know your thoughts!
 
-– Floris
+## About the author
+
+Floris Huetink is the founder of Pickleball Amersfoort, a local pickleball community in the Netherlands. When he is not playing pickleball, he sometimes creates software in exchange for money and/or fun.

@@ -88,7 +88,7 @@ In short, this makes sense, as every service turn starts on the right side. The 
 
 ### Rally point scoring (2025 provisional rules)
 
-Now, let's see how the 2025 rally point scoring rules performs.
+Now, let's see how 2025 rally point scoring performs.
 
 After simulating one million serves, a typical result will look like this:
 
@@ -158,7 +158,7 @@ Problem solved! Or not?
 
 ## Discussion
 
-So why is this format not used in the 2025 provisional rules?
+So why is out proposed format not used in the 2025 provisional rules?
 
 Reading a bit of [discussion on Facebook](https://www.facebook.com/groups/1340630926008388/posts/27974748598836592/), it seems that USA Pickleball has also been taking referees into account. In traditional scoring, a referee can tell from a team's odd or even score which player should be serving and receiving on which side of the court. This is why in tournaments, the starting server and receiver often need to wear a wristband, as they should be on the right side when scores are even.
 

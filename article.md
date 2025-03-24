@@ -164,7 +164,7 @@ Reading a bit of [discussion on Facebook](https://www.facebook.com/groups/134063
 
 The 2025 provisional rally scoring rules make sure this is still possible. This comes at the cost of a more severe right side serving bias.
 
-The proposed rally scoring alternative takes away right side serving bias. Now at the cost of no longer being able to instantly spot from the scoreboard which player should serve or receive on which side of the court.
+The proposed rally scoring alternative takes away right side serving bias. But this comes at the cost of no longer being able to instantly spot from the scoreboard which player should serve or receive on which side of the court.
 
 This leaves the question: what is more important?
 
